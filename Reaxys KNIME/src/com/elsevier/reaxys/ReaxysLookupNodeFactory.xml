@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knimeNode icon="reaxys.png" type="Source" xmlns="http://knime.org/node/v2.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://knime.org/node/v2.8 http://knime.org/node/v2.8.xsd">
+    <name>Reaxys Lookup</name>
+    
+    <shortDescription>
+        Lookup data from Reaxys
+    </shortDescription>
+    
+    <fullDescription>
+        <intro>This node connects to the Reaxys server and can look up facts about a molecule given a molecule identifier</intro>
+        
+        <option name="Reaxys URL">The URL to access the Reaxys API.  This is provided by Elsevier.</option>
+        <option name="API Key">A unique activation key provided to you by Elsevier that enables access to Reaxys</option>
+        <option name="Username">optional username for user-based login</option>
+        <option name="Password">optional password for user-based login</option>
+        <option name="Identifier">the Reaxys field used as a molecule identifier, like IDE.RXN - the Reaxys ID number, or IDE.CN - common name.  This is used with the input data to create a query. For example if the input is a series of numbers, and the identifier is IDE.XRN, the numbers will be considered XRN numbers and each row will result in a query for that identifier. This field is not used if a query is entered.</option>     
+        <option name="Query">Optional specific query, e.g. IDE.XRN = 24140410.  This is the same query that can be created in the advanced search option of Reaxys.</option>
+        <option name="Reaxys Data">The class of the information being searched. The class may have elements for the value, the temperature and other conditions for the measurement.</option>
+        <option name="Debug">clicking this writes additional debugging information to the log, including the XML request and response.</option>
+
+    </fullDescription>
+    
+    <ports>
+        <inPort index="0" name="In-Port name">table of query values.</inPort>
+        <!-- possibly more input ports here-->
+        <outPort index="0" name="Out-Port name">results, the exact columns in the output are dependent on the Reaxys data being retrieved</outPort>
+        <!-- possibly more output ports here-->
+    </ports>    
+
+</knimeNode>

@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: com.elsevier.reaxyslookup;singleton:=true
+Bundle-Version: 1.0.2
+Bundle-Activator: com.elsevier.reaxys.ReaxysLookupNodePlugin
+Bundle-Vendor: %Bundle-Vendor
+Require-Bundle: org.knime.workbench.core,
+ org.knime.base,
+ org.knime.chem.types;bundle-version="3.3.0"
+Bundle-ActivationPolicy: lazy
+Export-Package: com.elsevier.reaxys;x-internal:=true;
+  uses:="javax.swing.event,
+   org.osgi.framework,
+   org.eclipse.core.runtime,
+   org.knime.core.node.defaultnodesettings,
+   org.knime.core.data,
+   org.knime.core.node,
+   javax.swing"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: bin/
+
